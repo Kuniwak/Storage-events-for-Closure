@@ -26,7 +26,6 @@ listener.addEventListener(
 	function(e) { alert(e.key); }); // => changed key string
 </code>
 
-また、PrefixedMechanismの利用におけるイベントハンドリングにも対応しています。
 Additionaly, this module addapted PrefixedMechanism.
 
 <code>
