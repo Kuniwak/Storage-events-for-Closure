@@ -27,7 +27,7 @@ listener.addEventListener(
   function(e) { alert(e.key); }); // => changed key string
 </pre>
 
-Additionaly, this module addapted PrefixedMechanism.
+Additionaly, this module addapted "PrefixedMechanism":http://closure-library.googlecode.com/svn/docs/class_goog_storage_mechanism_PrefixedMechanism.html .
 
 <pre>
 var mechanism = new goog.storage.mechanism.HTML5LocalStorage();
