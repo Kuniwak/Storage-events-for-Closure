@@ -1,0 +1,49 @@
+h1. Storage Event のイベントハンドラ
+
+h2. 概要
+
+これは、Storageのイベントのハンドラとイベントオブジェクトで構成されたモジュールです。
+
+<code>
+goog.events.listen(window, 'storage', function(e) { alert(e.key); }) // => undefined
+</code>
+
+上に示すClosure Libraryの一般的なイベントハンドリングでは、
+リスナーに渡されるイベントオブジェクトはgoog.events.BrowserEventです。
+したがって、リスナーはW3Cの "StorageEvent":http://www.w3.org/TR/webstorage/#the-storage-event
+に定義されているkeyやoldValueなどのプロパティを受け取ることができません。
+
+このモジュールではW3Cの仕様に基づく "StorageEvent":http://www.w3.org/TR/webstorage/#the-storage-event
+をイベントオブジェクトとして以下のように受け取ることができるようになります。
+
+<code>
+var listener = new orga.events.StorageHandler();
+listener.addEventListener(
+	orga.events.StorageHandler.EventType.STORAGE,
+	function(e) { alert(e.key); }); // => changed key string
+</code>
+
+また、PrefixedMechanismの利用におけるイベントハンドリングにも対応しています。
+
+<code>
+var mechanism = new goog.storage.mechanism.HTML5LocalStorage();
+var prefixedMechanism1 = new goog.storage.mechanism.PrefixedMechanism(mechanism, 'foo');
+var storage1 = new goog.storage.Storage(prefixedMechanism1);
+
+var prefixedMechanism2 = new goog.storage.mechanism.PrefixedMechanism(mechanism, 'bar');
+var storage2 = new goog.storage.Storage(prefixedMechanism2);
+
+var listener = new orga.events.PrefixedStorageHandler('bar');
+listener.addEventListener(
+	orga.events.PrefixedStorageHandler.EventType.STORAGE,
+	function(e) { alert(e.key); });
+
+storage1.set('foobar', '1234'); // listener not fired
+storage2.set('foobar', '1234'); // listener fired
+</code>
+
+
+h2. API リファレンス
+
+"Wiki":https://github.com/OrgaChem/Storage-events-for-Closure/wiki/API-%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9(API-Reference-for-Japanese) を参照してください。
+英語版は "こちら":https://github.com/OrgaChem/Storage-events-for-Closure/wiki/API-Reference 。
