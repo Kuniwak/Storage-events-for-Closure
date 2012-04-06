@@ -10,40 +10,40 @@ This is a module that contains storage event handlers and storage event classes.
 
 See below.
 
-<code>
+<pre>
 goog.events.listen(window, 'storage', function(e) { alert(e.key); }) // => undefined
-</code>
+</pre>
 
 That is generally event handling, but the listener can not given some properties;
 "key" or "oldValue" defined in "W3C StorageEvent":http://www.w3.org/TR/webstorage/#the-storage-event .
 
 This module make to be able to given an event object likes "W3C StorageEvent":http://www.w3.org/TR/webstorage/#the-storage-event object.
 
-<code>
+<pre>
 var listener = new orga.events.StorageHandler();
+
 listener.addEventListener(
-	orga.events.StorageHandler.EventType.STORAGE,
-	function(e) { alert(e.key); }); // => changed key string
-</code>
+  orga.events.StorageHandler.EventType.STORAGE,
+  function(e) { alert(e.key); }); // => changed key string
+</pre>
 
 Additionaly, this module addapted PrefixedMechanism.
 
-<code>
+<pre>
 var mechanism = new goog.storage.mechanism.HTML5LocalStorage();
 var prefixedMechanism1 = new goog.storage.mechanism.PrefixedMechanism(mechanism, 'foo');
 var storage1 = new goog.storage.Storage(prefixedMechanism1);
-
 var prefixedMechanism2 = new goog.storage.mechanism.PrefixedMechanism(mechanism, 'bar');
 var storage2 = new goog.storage.Storage(prefixedMechanism2);
 
 var listener = new orga.events.PrefixedStorageHandler('bar');
 listener.addEventListener(
-	orga.events.PrefixedStorageHandler.EventType.STORAGE,
-	function(e) { alert(e.key); });
+  orga.events.PrefixedStorageHandler.EventType.STORAGE,
+  function(e) { alert(e.key); });
 
 storage1.set('foobar', '1234'); // listener not fired
 storage2.set('foobar', '1234'); // listener fired
-</code>
+</pre>
 
 
 h2. API Reference
