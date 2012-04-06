@@ -8,13 +8,10 @@ h2. 概要
 goog.events.listen(window, 'storage', function(e) { alert(e.key); }) // => undefined
 </pre>
 
-上に示すClosure Libraryの一般的なイベントハンドリングでは、
-リスナーに渡されるイベントオブジェクトはgoog.events.BrowserEventです。
-したがって、リスナーはW3Cの "StorageEvent":http://www.w3.org/TR/webstorage/#the-storage-event
-に定義されているkeyやoldValueなどのプロパティを受け取ることができません。
+上に示すClosure Libraryの一般的なイベントハンドリングでは、リスナーに渡されるイベントオブジェクトはgoog.events.BrowserEventです。
+したがって、リスナーはW3Cの "StorageEvent":http://www.w3.org/TR/webstorage/#the-storage-event に定義されているkeyやoldValueなどのプロパティを受け取ることができません。
 
-このモジュールではW3Cの仕様に基づく "StorageEvent":http://www.w3.org/TR/webstorage/#the-storage-event
-をイベントオブジェクトとして以下のように受け取ることができるようになります。
+このモジュールではW3Cの仕様に基づく "StorageEvent":http://www.w3.org/TR/webstorage/#the-storage-event をイベントオブジェクトとして以下のように受け取ることができるようになります。
 
 <pre>
 var listener = new orga.events.StorageHandler();
