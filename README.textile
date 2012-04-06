@@ -1,7 +1,7 @@
 h1. Escape Codec Library conformed to Closure
 
-"Here":https://github.com/OrgaChem/Escape-Codec-Library-for-Closure/blob/master/README_Ja.textile is a README for Japanese.
-日本語のREADMEは "こちら":https://github.com/OrgaChem/Escape-Codec-Library-for-Closure/blob/master/README_Ja.textile
+"Here":https://github.com/OrgaChem/Storage-events-for-Closure/blob/master/README_Ja.textile is a README for Japanese.
+日本語のREADMEは "こちら":https://github.com/OrgaChem/Storage-events-for-Closure/blob/master/README_Ja.textile
 
 
 h2. Abstract
