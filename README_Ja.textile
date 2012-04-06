@@ -20,7 +20,7 @@ listener.addEventListener(
 	function(e) { alert(e.key); }); // => changed key string
 </pre>
 
-また、"PrefixedMechanism":http://closure-library.googlecode.com/svn/docs/class_goog_storage_mechanism_PrefixedMechanism.html の利用におけるイベントハンドリングにも対応しています。
+また、 "PrefixedMechanism":http://closure-library.googlecode.com/svn/docs/class_goog_storage_mechanism_PrefixedMechanism.html の利用におけるイベントハンドリングにも対応しています。
 
 <pre>
 var mechanism = new goog.storage.mechanism.HTML5LocalStorage();
