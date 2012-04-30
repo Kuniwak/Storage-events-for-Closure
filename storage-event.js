@@ -18,10 +18,10 @@ goog.require('goog.json');
 
 
 /**
- * @param {StorageEvent} e A browser storage event. See
+ * @param {StorageEvent|Object} e A browser storage event. See
  * {@link http://www.w3.org/TR/webstorage/#the-storage-event}.
  * It follow {@link goog.storage.Storage} value style.
- * So, storing premitive value is available.
+ * So, only premitive value is available.
  * And try unwrap if the value seems the data from
  * {@link goog.storage.RichStorage},
  * and {@link orga.events.StorageEvent.ENABLE_UNWRAP_TRY} is true.
